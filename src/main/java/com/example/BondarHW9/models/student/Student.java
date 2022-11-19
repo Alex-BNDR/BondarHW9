@@ -18,7 +18,7 @@ public class Student {
     private String gender;
 
     @ManyToOne
-    @JoinColumn(name = "universitygroup_id")
+    @JoinColumn(name = "group_id")
     @JsonBackReference
     private Group group;
 
@@ -32,23 +32,23 @@ public class Student {
         this.gender = gender;
     }
 
-    public Student(String firstName, String secondName, String gender, Group universityGroup) {
+    public Student(String firstName, String secondName, String gender, Group group) {
         this.firstName = firstName;
         this.lastName = secondName;
         this.age = age;
         this.gender = gender;
 
-        this.group = universityGroup;
+        this.group = group;
     }
 
-    public Student(Long id, String firstName, String secondName, String gender, Group universityGroup) {
+    public Student(Long id, String firstName, String secondName, String gender, Group group) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = secondName;
         this.age = age;
         this.gender = gender;
 
-        this.group = universityGroup;
+        this.group = group;
     }
 
     public String getFirstName() {

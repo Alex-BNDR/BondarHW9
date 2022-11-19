@@ -20,14 +20,14 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public void addStudentToGroup(Student student, Long id) {
+    public void addStudent(Student student, Long id) {
         Group group = groupRep.findById(id).get();
         group.addStudent(student);
         groupRep.save(group);
     }
 
     @Override
-    public void deleteStudentFromGroup(Long studentId) {
+    public void deleteStudent(Long studentId) {
         Group group = studentRep.findById(studentId).get().getGroup();
         group.removeStudent(studentRep.findById(studentId).get());
         groupRep.save(group);

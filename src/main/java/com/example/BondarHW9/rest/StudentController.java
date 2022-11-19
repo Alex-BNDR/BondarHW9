@@ -1,4 +1,4 @@
-package com.example.BondarHW9.web;
+package com.example.BondarHW9.rest;
 
 import com.example.BondarHW9.models.student.Student;
 import com.example.BondarHW9.service.StudentService;
@@ -16,8 +16,8 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/getallstudentsforteacher")
+    @GetMapping("/getallstudentsingroup")
     public List<Student> getAllStudentsForTeacher (@RequestParam Long teacherId){
-        return studentService.showAllStudentsForCertainTeacher(teacherId);
+        return studentService.showAllStudentsInGroupByTeacher(teacherId);
     }
 }

@@ -4,7 +4,7 @@ import com.example.BondarHW9.models.student.Student;
 
 public interface GroupService {
 
-    void addStudentToGroup(Student student , Long id);
+    void addStudent(Student student , Long id);
 
-    void deleteStudentFromGroup(Long studentId);
+    void deleteStudent(Long studentId);
 }

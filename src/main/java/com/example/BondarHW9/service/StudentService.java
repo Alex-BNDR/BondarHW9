@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface StudentService {
 
-    List<Student> showAllStudentsForCertainTeacher(Long teacherId);
+    List<Student> showAllStudentsInGroupByTeacher(Long teacherId);
 }

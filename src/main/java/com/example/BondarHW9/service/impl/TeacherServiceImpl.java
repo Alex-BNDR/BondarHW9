@@ -20,7 +20,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public void addGroupToTeacher(Group group, Long id) {
+    public void addGroup(Group group, Long id) {
         Teacher teacher = teacherRep.findById(id).get();
         teacher.addGroup(group);
         groupRep.save(group);
@@ -28,14 +28,14 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public void deleteGroupFromTeacher(Long groupId) {
+    public void deleteGroup(Long groupId) {
         Teacher teacher = groupRep.findById(groupId).get().getTeacher();
         teacher.removeGroup(groupRep.findById(groupId).get());
         teacherRep.save(teacher);
     }
 
     @Override
-    public int teacherNumberOfGroups(Long teacherId) {
+    public int numberOfGroupsByTeacher(Long teacherId) {
         return teacherRep.findById(teacherId).get().getGroups().size();
     }
 }

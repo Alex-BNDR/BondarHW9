@@ -20,7 +20,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> showAllStudentsForCertainTeacher(Long teacherId) {
+    public List<Student> showAllStudentsInGroupByTeacher(Long teacherId) {
         List<Student> studentList = new ArrayList<>();
         List<Group> groups = new ArrayList<>();
         groups.addAll(teacherRep.findById(teacherId).get().getGroups());

@@ -16,7 +16,7 @@ public class Teacher {
     private String firstName;
     private String lastName;
 
-    @OneToMany(mappedBy = "teacher", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "teacher",cascade = CascadeType.PERSIST)
     @JsonManagedReference
     private List<Group> groups = new ArrayList<>();
 

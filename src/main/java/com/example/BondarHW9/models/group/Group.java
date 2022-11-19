@@ -14,11 +14,14 @@ public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
+
     private Long id;
     private String name;
+
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Student> students = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     @JsonBackReference

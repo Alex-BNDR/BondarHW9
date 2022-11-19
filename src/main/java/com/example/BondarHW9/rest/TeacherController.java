@@ -1,4 +1,4 @@
-package com.example.BondarHW9.web;
+package com.example.BondarHW9.rest;
 
 import com.example.BondarHW9.models.group.Group;
 import com.example.BondarHW9.service.TeacherService;
@@ -15,16 +15,16 @@ public class TeacherController {
 
     @PostMapping("/teacheradd")
     public void addGroupToTeacher(@RequestBody Group group, @RequestParam Long id) {
-        teacherService.addGroupToTeacher(group, id);
+        teacherService.addGroup(group, id);
     }
 
-    @DeleteMapping("/deletegroupfromteacher")
+    @DeleteMapping("/deletegroup")
     public void deleteGroupFromTeacher(@RequestParam Long id) {
-        teacherService.deleteGroupFromTeacher(id);
+        teacherService.deleteGroup(id);
     }
 
-    @GetMapping("/teachernumberofgroups")
+    @GetMapping("/numberofgroupsbyteacher")
     public int teacherNumberOfGroups(@RequestParam Long id) {
-        return teacherService.teacherNumberOfGroups(id);
+        return teacherService.numberOfGroupsByTeacher(id);
     }
 }

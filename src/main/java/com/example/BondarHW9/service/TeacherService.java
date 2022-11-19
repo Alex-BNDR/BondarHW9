@@ -4,9 +4,9 @@ import com.example.BondarHW9.models.group.Group;
 
 public interface TeacherService {
 
-    void addGroupToTeacher(Group group, Long teacherId);
+    void addGroup(Group group, Long teacherId);
 
-    void deleteGroupFromTeacher(Long groupId);
+    void deleteGroup(Long groupId);
 
-    int teacherNumberOfGroups(Long teacherId);
+    int numberOfGroupsByTeacher(Long teacherId);
 }
